@@ -1,6 +1,6 @@
-# Playwright Automation Template
+# Priority Web AI Automation Template
 
-A reusable Playwright Test and TypeScript starter for UI automation. It is intentionally small, runs successfully immediately after setup, and can be extended with project-specific page objects, fixtures, and tests.
+A clean Playwright and TypeScript starter for Priority Web, based on the [Playwright framework template](https://github.com/CohenTalQA/playwright-framework-template). It includes reusable AI instructions, skills and specialist agents. No Priority credentials, business flows, or production data are included.
 
 ## Included
 
@@ -13,19 +13,21 @@ A reusable Playwright Test and TypeScript starter for UI automation. It is inten
 - Traces, screenshots, and videos on failure
 - GitHub Actions with type-checking and HTML report artifacts
 - `AGENTS.md` instructions for coding agents
+- Priority Web discovery, flow and debugging skills in `.github/skills/`
+- Planner, builder, fixer and reviewer agents in `.github/agents/`
+- Placeholders for approved, sanitized observations and test-data cleanup in `docs/`
 
 ## Create a project from this template
 
-1. Select **Use this template** on GitHub and create a new repository.
-2. Clone the new repository and enter its directory.
-3. Install dependencies and browsers:
+1. Clone your new repository and enter its directory.
+2. Install dependencies and browsers:
 
 ```bash
 npm ci
 npx playwright install
 ```
 
-4. Create your local environment file:
+3. Create your local environment file:
 
 PowerShell:
 
@@ -39,9 +41,11 @@ macOS/Linux:
 cp .env.example .env
 ```
 
-5. Set `E2E_BASE_URL` in `.env`, then replace the example page object and test with your application flows.
+4. Set `E2E_BASE_URL` in `.env` to the approved Priority Web environment, then replace the example page object and test with your application flows. The example renders local markup and does not connect to Priority.
 
-The checked-in defaults use `https://example.com`, so a fresh clone and CI run are green without credentials.
+The checked-in defaults use `https://example.com`; the example test renders its own markup and requires neither network access nor credentials.
+
+Priority-specific login, selectors, popup handling, session limits and cleanup must be observed and approved for the target environment; the starter does not claim to have verified them. Business actions may create or modify records. Get approval for the run and its starting point, and define cleanup before locking a flow.
 
 ## Environment configuration
 
@@ -92,6 +96,9 @@ src/
 tests/
   sanity/         Fast checks of critical user-visible behavior
 .github/workflows/playwright.yml
+.github/agents/   Priority Web specialist agents
+.github/skills/   On-demand Priority Web workflows
+docs/             Approved observations and cleanup procedures
 AGENTS.md
 playwright.config.ts
 ```
@@ -109,3 +116,5 @@ Playwright already provides auto-waiting, traces, and detailed HTML reports. Avo
 ## CI
 
 The included workflow runs on pushes and pull requests to `main`. It installs dependencies and browsers, type-checks the repository, runs the complete test suite, and uploads the HTML report even when tests fail.
+
+Reports, traces, screenshots and videos may contain sensitive application data. Review retention and artifact access before enabling Priority tests in CI. Never commit credentials, `.env`, browser state, or test artifacts.

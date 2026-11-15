@@ -10,11 +10,10 @@ export class ExamplePage {
   }
 
   async goto(): Promise<void> {
-    await this.page.goto('/');
+    await this.page.setContent('<h1>Example Domain</h1><a href="https://example.com">Learn more</a>');
   }
 
   async expectLoaded(): Promise<void> {
-    await expect(this.page).toHaveURL(/example\.com/);
     await expect(this.heading).toBeVisible();
     await expect(this.informationLink).toBeVisible();
   }

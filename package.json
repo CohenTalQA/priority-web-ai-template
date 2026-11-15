@@ -1,8 +1,8 @@
 {
-  "name": "playwright-framework-template",
+  "name": "priority-web-ai-template",
   "version": "2.0.0",
   "private": true,
-  "description": "Reusable Playwright and TypeScript test automation template.",
+  "description": "AI-assisted Priority Web automation starter with Playwright and TypeScript.",
   "type": "module",
   "scripts": {
     "test": "playwright test",

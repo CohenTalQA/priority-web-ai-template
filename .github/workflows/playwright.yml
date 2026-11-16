@@ -21,7 +21,7 @@ jobs:
       E2E_ARTIFACTS: ${{ vars.E2E_ARTIFACTS || 'false' }}
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm

@@ -8,7 +8,7 @@
 - Avoid CSS/XPath selectors, fixed sleeps, test ordering, and shared mutable state. When Priority exposes no usable accessible locator, inspect the current DOM and use the smallest stable scoped selector; document the reason.
 - Never log credentials, tokens, cookies, or values entered into password fields.
 - Keep tests independent and use Playwright auto-waiting assertions.
-- Run `npm run typecheck` and the narrowest relevant test before reporting completion.
+- Run `npm run lint`, `npm run typecheck` and the narrowest relevant test before reporting completion. Run `npm run test:unit` for infrastructure changes.
 - Preserve unrelated changes and do not commit `.env`, reports, traces, videos, or browser state.
 - Treat screenshots, traces, reports and test data as potentially sensitive; share only after review.
 - Start new features from `main` on a feature branch. Do not commit, push or merge without explicit user approval.

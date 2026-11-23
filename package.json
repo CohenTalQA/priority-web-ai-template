@@ -21,7 +21,7 @@
     "node": ">=24"
   },
   "devDependencies": {
-    "@playwright/test": "^1.62.1",
+    "@playwright/test": "^1.65.1",
     "@biomejs/biome": "^2.6.8",
     "@types/node": "^24.19.2",
     "dotenv": "^17.4.2",
